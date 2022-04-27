@@ -1,3 +1,4 @@
+-- Don't change this function
 use JewishLuachDB
 go
 drop function if exists dbo.FullMoiledTable
@@ -29,6 +30,8 @@ begin
         @TempMonth int,
         @GregorianDate datetime2 = '0002-08-24 23:32:00.0000000',
         @MachzarYear int
+
+    if @JewishYear >= 6000 return
 
     -- Loop until year = the year you want to check on
     while @StartYear < @JewishYear + 1
