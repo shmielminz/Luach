@@ -20,12 +20,11 @@ begin
 
     set @JewishYear = (select mfm.YearNum from MoiledForMachzar mfm where mfm.DateStart = @StartDate)
 
-    while year(@StartDate) < @GregorianYear
+    if @StartDate < @GregorianDate
     begin
         (select @StartDate = min(fyd.DayDate), @EndDate = max(fyd.DayDate) from FullYearDate(@JewishYear) fyd)
         if @GregorianDate not between @StartDate and @EndDate
         begin
-            set @StartDate = dateadd(year,1,@StartDate)
             set @JewishYear += 1
         end
         else
@@ -40,4 +39,4 @@ begin
 end
 go
 
-select dbo.ConvertToJewishDate('1971-04-23')
+select dbo.ConvertToJewishDate('2022-10-23')
