@@ -8,7 +8,7 @@ This is a full Luach in sql server, where you can just enter any Gregorian date 
 -	The third function checks the year of the Machzar (from function 2), and returns if it's a Shnas Ibur (leap year), if the year in Machzar is in 3,6,8,11,14,17,19 it's a Shnas Ibur with 13 months else it's a normal year with 12 months.
 -	The 4'th function returns the Moiled for every Rosh Hashona since ג'תשסג which is the first year of the first Machzar since CE, up to and including year ה'תתקצט which is the last year before ששת אלפים. And it inserts it to MoiledForMachzar table which will be referenced from later.
 
-**Don't change function 5**
+**Don't change function 4**
 -	Function 5 returns the Moiled for the full year, a month is 29 days 12 hours 44 minutes and 1 chailek, so it checks the Moiled from Rosh Hashona using MoiledForMachzar table, and by using the third function it returns the Moiled for 12 or 13 months.
 -	Function 6, makes calculations on the Moiled of Rosh Hashona, and returns when Rosh Hashona is for this year and for the next year, and returns the first and last day of the year, and it makes calculations on the year if it has 29 days on Chesvon and Kislev, 30 days, or if 1 is 29 and 1 is 30.
 -	Function 7 returns a table of a full Luach on the year, with Parshias (חוץ לארץ) and days, and the Gregorian date.
